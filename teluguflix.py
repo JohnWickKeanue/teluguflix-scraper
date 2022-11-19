@@ -12,6 +12,10 @@ def flix(url):
     soup = BeautifulSoup (f, "html.parser")
     for a in soup.find_all("a"):
               c = a.get("href")
-              print(c)
+              t = client.get(c).text
+              soupt = BeautifulSoup(t, "html.parser")
+              title = soupt.title
+              gd_txt = f"{(title.text).replace('GDToT | ' , '')}\n{c}\n\n"
+              print(gd_txt)
 
 print(flix(url))
