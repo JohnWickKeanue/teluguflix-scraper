@@ -12,7 +12,7 @@ def flix(url):
         if len(links) == 0:
              links = soup.select('a[href*="filepress"]')
         gd_txt = f"Total Links Found : {len(links)}\n\n"
-        sendMessage(gd_txt, context.bot, update.message)
+        print(gd_txt)
         for a in links:
              link = a["href"]
              print(link) 
